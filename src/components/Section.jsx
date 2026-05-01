@@ -54,7 +54,7 @@ const Section = () => {
 
       </div>
       <div className="w-full flex justify-center md:w-1/2">
-        <img src={logo}  alt="Shimul" className="w-2/3  rounded-full object-cover" />
+        <img src={logo}  alt="Shimul" className="w-2/3 border-2 border-blue-600 shadow-2xl shadow-blue-900 outline-2 outline-blue-800 rounded-tl-4xl rounded-br-4xl object-cover" />
       </div>
 
 
