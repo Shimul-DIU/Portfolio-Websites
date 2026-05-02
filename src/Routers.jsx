@@ -11,15 +11,15 @@ import ResumePage from "./pages/ResumePage";
 let router=createBrowserRouter([
   {
     path:'/',
-    element:Mainlayout,
+    element:<Mainlayout></Mainlayout>,
     children:[
-      {index:true, element:Home},
-      {path:'/about', element:About_me},
-      {path:'/projects',element:Projects},
-      {path:'/Skills', element:Skills},
-      {path:'/resume', element:ResumePage},
-      {path:'/blog', element:Blog},
-      {path:'*', element:Home}
+      {index:true, element:<Home/>},
+      {path:'/about', element:<About_me/>},
+      {path:'/projects',element:<Projects/>},
+      {path:'/Skills', element:<Skills/>},
+      {path:'/resume', element:<ResumePage/>},
+      {path:'/blog', element:<Blog/>},
+      {path:'*', element:<Home/>}
 
     ]
   }

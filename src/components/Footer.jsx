@@ -74,7 +74,7 @@ const Footer = () => {
           <div className="space-y-3 text-sm text-gray-500">
             <p className="flex items-center gap-2">
               <MdEmail className="text-gray-600" />
-              rakib@email.com
+              md.shimuldiu@email.com
             </p>
 
             <p className="flex items-center gap-2">
