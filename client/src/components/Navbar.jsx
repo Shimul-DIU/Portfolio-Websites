@@ -12,11 +12,11 @@ import logo from "../../public/images/icon.png";
 
 const navLinks = [
   { to: "/", label: "Home" },
-  { to: "/about", label: "About" },
+  { to: "/about", label: "About Me" },
   { to: "/projects", label: "Projects" },
   { to: "/skills", label: "Skills" },
-  { to: "/contact", label: "Contact" },
   { to: "/blog", label: "Blog" },
+  { to: "/contact", label: "Contact Me" },
 ];
 
 const Navbar = () => {
@@ -34,44 +34,42 @@ const Navbar = () => {
   };
 
   const searchRingClasses =
-    "ring-1 ring-transparent hover:ring-white/70 focus-within:ring-2 focus-within:ring-white transition-all duration-200";
+    "ring-1 ring-transparent hover:ring-[#C9A876]/50 focus-within:ring-2 focus-within:ring-[#C9A876] transition-all duration-200";
 
   return (
     <>
-      <nav className="sticky top-0 z-50 bg-linear-to-bl from-[#CF15D4] to-[#7B14F9] shadow-md">
+      <nav className="sticky top-0 z-50 bg-[#140D0A] border-b border-[#C9A876]/20 shadow-lg">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="relative flex items-center h-16 gap-4 lg:gap-6">
             {/* Logo */}
             <Link to="/" className="flex items-center shrink-0 group">
-              <img
-                src={logo}
-                className="h-10 object-contain transition-transform duration-300 group-hover:scale-110 group-hover:-rotate-6"
-                alt="icon"
-              />
+              <div className="w-10 h-10 rounded-full border-2 border-[#C9A876] flex items-center justify-center text-[#C9A876] font-['Playfair_Display'] font-bold text-lg transition-all duration-300 group-hover:scale-110 group-hover:shadow-glow">
+                S
+              </div>
             </Link>
 
-            {/* Spacer - absorbs freed space right after logo */}
+            {/* Spacer */}
             <div className="hidden md:block flex-1" />
 
-            {/* Search bar - smaller fixed width, responsive between breakpoints */}
+            {/* Search bar */}
             <form
               onSubmit={handleSearchSubmit}
-              className={`hidden md:flex items-center shrink-0 w-[clamp(220px,35vw,420px)] bg-white/15 rounded-full px-4 py-2 transition-all duration-300 ${searchRingClasses}`}
+              className={`hidden md:flex items-center shrink-0 w-[clamp(200px,30vw,360px)] bg-[#2A1D16] rounded-full px-4 py-2 transition-all duration-300 ${searchRingClasses}`}
             >
               <FontAwesomeIcon
                 icon={faMagnifyingGlass}
-                className="text-white/80 text-sm mr-2 shrink-0"
+                className="text-[#C9A876]/60 text-sm mr-2 shrink-0"
               />
               <input
                 type="text"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="Search..."
-                className="w-full bg-transparent text-white placeholder-white/70 text-sm outline-none"
+                className="w-full bg-transparent text-[#F5EFE6] placeholder-[#F5EFE6]/50 text-sm outline-none font-['Inter']"
               />
             </form>
 
-            {/* Nav items - natural width, sits right after search bar */}
+            {/* Nav items */}
             <ul className="hidden md:flex items-center gap-1 lg:gap-6 shrink-0">
               {navLinks.map((link) => {
                 const isActive = location.pathname === link.to;
@@ -79,19 +77,17 @@ const Navbar = () => {
                   <li key={link.to} className="flex items-stretch group">
                     <Link
                       to={link.to}
-                      className={`relative flex items-center px-2 font-medium whitespace-nowrap transition-colors duration-200 ${
-                        isActive
-                          ? "text-yellow-300"
-                          : "text-white/90 hover:text-yellow-300"
-                      }`}
+                      className={`relative flex items-center px-2 font-['Inter'] text-[11px] tracking-[1.5px] uppercase font-medium whitespace-nowrap transition-colors duration-200 ${isActive
+                          ? "text-[#C9A876]"
+                          : "text-[#F5EFE6]/70 hover:text-[#C9A876]"
+                        }`}
                     >
                       {link.label}
                       <span
-                        className={`absolute left-2 right-2 -bottom-[1px] h-[2px] rounded-full bg-yellow-300 origin-left transition-transform duration-300 ${
-                          isActive
+                        className={`absolute left-2 right-2 -bottom-[1px] h-[2px] rounded-full bg-[#C9A876] origin-left transition-transform duration-300 ${isActive
                             ? "scale-x-100"
                             : "scale-x-0 group-hover:scale-x-100"
-                        }`}
+                          }`}
                       />
                     </Link>
                   </li>
@@ -100,20 +96,20 @@ const Navbar = () => {
             </ul>
 
             {/* Resume Button + Mobile Icons */}
-            <div className="flex items-center  gap-3 shrink-0 ml-auto md:ml-0">
+            <div className="flex items-center gap-3 shrink-0 ml-auto md:ml-0">
               <a
                 href="/files/Resume_Md.Shimul.pdf"
-                download={"Resume_Md.Shimul Mia.pdf"}
-                className="hidden  md:inline-flex items-center overflow-hidden bg-white text-[#7B14F9] px-5 py-2 md:gap-2 rounded-full font-medium shadow-md hover:shadow-lg hover:scale-105 active:scale-95 transition-all duration-200 text-sm"
+                download="Resume_Md.Shimul.pdf"
+                className="hidden md:inline-flex items-center overflow-hidden bg-[#C9A876] text-[#140D0A] px-5 py-2 gap-2 rounded-full font-['Inter'] text-sm font-semibold shadow-lg hover:shadow-xl hover:scale-105 active:scale-95 transition-all duration-200"
               >
                 Resume
-                <FontAwesomeIcon icon={faArrowDown} />
+                <FontAwesomeIcon icon={faArrowDown} className="text-xs" />
               </a>
 
               {/* Mobile search toggle */}
               <button
                 onClick={() => setSearchOpen(true)}
-                className="md:hidden text-white hover:text-yellow-300 focus:outline-none p-2 rounded-lg hover:bg-white/10 transition"
+                className="md:hidden text-[#F5EFE6] hover:text-[#C9A876] focus:outline-none p-2 rounded-lg hover:bg-[#2A1D16] transition"
                 aria-label="Open search"
               >
                 <FontAwesomeIcon icon={faMagnifyingGlass} className="text-xl" />
@@ -121,7 +117,7 @@ const Navbar = () => {
 
               <button
                 onClick={() => setIsOpen(!isopen)}
-                className="md:hidden text-white hover:text-yellow-300 focus:outline-none p-2 rounded-lg hover:bg-white/10 transition"
+                className="md:hidden text-[#F5EFE6] hover:text-[#C9A876] focus:outline-none p-2 rounded-lg hover:bg-[#2A1D16] transition"
                 aria-label="Toggle menu"
               >
                 <FontAwesomeIcon
@@ -137,22 +133,21 @@ const Navbar = () => {
             {/* Mobile Search Overlay */}
             <form
               onSubmit={handleSearchSubmit}
-              className={`md:hidden absolute inset-0 flex items-center gap-2 px-4 bg-linear-to-bl from-[#CF15D4] to-[#7B14F9] z-10 transition-all duration-300 ${
-                searchOpen
+              className={`md:hidden absolute inset-0 flex items-center gap-2 px-4 bg-[#140D0A] z-10 transition-all duration-300 ${searchOpen
                   ? "opacity-100 visible"
                   : "opacity-0 invisible pointer-events-none"
-              }`}
+                }`}
             >
               <button
                 type="button"
                 onClick={() => setSearchOpen(false)}
-                className="flex items-center justify-center w-9 h-9 shrink-0 rounded-full bg-white/20 text-white hover:bg-white/30 active:scale-90 transition"
+                className="flex items-center justify-center w-9 h-9 shrink-0 rounded-full bg-[#2A1D16] text-[#C9A876] hover:bg-[#C9A876] hover:text-[#140D0A] active:scale-90 transition"
                 aria-label="Close search"
               >
                 <FontAwesomeIcon icon={faArrowLeft} />
               </button>
               <div
-                className={`flex-1 flex items-center bg-white/15 rounded-full px-4 py-2 transition-all duration-300 ${searchRingClasses}`}
+                className={`flex-1 flex items-center bg-[#2A1D16] rounded-full px-4 py-2 transition-all duration-300 ${searchRingClasses}`}
               >
                 <input
                   autoFocus
@@ -160,7 +155,7 @@ const Navbar = () => {
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   placeholder="Search..."
-                  className="w-full bg-transparent text-white placeholder-white/70 text-sm outline-none"
+                  className="w-full bg-transparent text-[#F5EFE6] placeholder-[#F5EFE6]/50 text-sm outline-none font-['Inter']"
                 />
               </div>
             </form>
@@ -169,9 +164,8 @@ const Navbar = () => {
 
         {/* Mobile Menu Dropdown */}
         <div
-          className={`md:hidden transition-all duration-300 ease-in-out ${
-            isopen ? "max-h-screen opacity-100" : "max-h-0 opacity-0 invisible"
-          } overflow-hidden bg-white border-t border-gray-100 shadow-lg`}
+          className={`md:hidden transition-all duration-300 ease-in-out ${isopen ? "max-h-screen opacity-100" : "max-h-0 opacity-0 invisible"
+            } overflow-hidden bg-[#2A1D16] border-t border-[#C9A876]/20 shadow-xl`}
         >
           <ul className="flex flex-col py-3 px-4 space-y-1">
             {navLinks.map((link, i) => (
@@ -187,11 +181,10 @@ const Navbar = () => {
                 <Link
                   to={link.to}
                   onClick={handleLinkClick}
-                  className={`block px-4 py-3 rounded-lg font-medium transition ${
-                    location.pathname === link.to
-                      ? "text-[#7B14F9] bg-purple-50"
-                      : "text-gray-700 hover:text-[#7B14F9] hover:bg-gray-50"
-                  }`}
+                  className={`block px-4 py-3 rounded-lg font-['Inter'] text-sm font-medium transition ${location.pathname === link.to
+                      ? "text-[#C9A876] bg-[#140D0A]"
+                      : "text-[#F5EFE6]/70 hover:text-[#C9A876] hover:bg-[#140D0A]/50"
+                    }`}
                 >
                   {link.label}
                 </Link>
@@ -209,7 +202,7 @@ const Navbar = () => {
                 href="/files/Resume_Md_Shimul.pdf"
                 download="Resume_Md_Shimul.pdf"
                 onClick={handleLinkClick}
-                className="w-full justify-center text-center bg-linear-to-bl from-[#CF15D4] items-center to-[#7B14F9] text-white px-4 flex gap-2.5 py-3 rounded-xl font-medium hover:shadow-md active:scale-95 transition"
+                className="w-full justify-center text-center bg-[#C9A876] text-[#140D0A] px-4 flex items-center gap-2.5 py-3 rounded-xl font-['Inter'] text-sm font-semibold hover:shadow-md active:scale-95 transition"
               >
                 Resume
                 <FontAwesomeIcon icon={faArrowDown} />
@@ -219,9 +212,10 @@ const Navbar = () => {
         </div>
       </nav>
 
+      {/* Mobile Menu Overlay */}
       {isopen && (
         <div
-          className="fixed inset-0 bg-black/20 backdrop-blur-sm z-40 md:hidden"
+          className="fixed inset-0 bg-black/40 backdrop-blur-sm z-40 md:hidden"
           onClick={() => setIsOpen(false)}
         />
       )}
