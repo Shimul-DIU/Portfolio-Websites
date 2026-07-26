@@ -75,22 +75,22 @@ const Banner = () => {
               | Shimul Mia |
             </span>
 
-            <h1 className="font-['Playfair_Display'] text-4xl xs:text-5xl sm:text-6xl md:text-6xl lg:text-5xl xl:text-6xl 2xl:text-7xl leading-[1.1] text-[#F5EFE6] animate-fade-in-up">
+            <h1 className="font-['Playfair_Display'] text-4xl xs:text-5xl sm:text-6xl md:text-6xl lg:text-5xl xl:text-6xl 2xl:text-7xl leading-[1.1] text-white animate-fade-in-up">
               Full Stack
               <span className="block">
-                Web <span className="text-[#C9A876] italic">Developer</span>
+                Web <span className="text-cyan-500 italic">Developer</span>
               </span>
             </h1>
 
-            <h2 className="font-['Inter'] text-base sm:text-lg md:text-xl lg:text-xl xl:text-2xl font-medium text-[#F5EFE6]/80 mt-3 animate-fade-in-up animation-delay-200">
+            <h2 className="font-['Inter'] text-base sm:text-lg md:text-xl lg:text-xl xl:text-2xl font-medium text-white mt-3 animate-fade-in-up animation-delay-200">
               I'm a{" "}
               <span
                 ref={typedElement}
-                className="text-[#C9A876] font-semibold"
+                className="text-cyan-500 italic font-semibold"
               />
             </h2>
 
-            <p className="mt-4 max-w-md mx-auto lg:mx-0 text-sm sm:text-base text-[#F5EFE6]/60 font-['Inter'] leading-relaxed animate-fade-in-up animation-delay-400">
+            <p className="mt-4 max-w-md mx-auto lg:mx-0 text-sm sm:text-base text-white/80 font-['Inter'] leading-relaxed animate-fade-in-up animation-delay-400">
               Building fast, clean full stack applications with React, Node.js
               and MongoDB. Available for entry-level developer roles worldwide.
             </p>
@@ -122,7 +122,7 @@ const Banner = () => {
                   href={social.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-8 h-8 sm:w-10 sm:h-10 lg:w-11 lg:h-11 rounded-full flex justify-center items-center bg-[#2A1D16]/80 backdrop-blur-sm border border-[#C9A876]/30 text-[#F5EFE6]/70 transition-all duration-300 hover:bg-[#C9A876] hover:text-[#140D0A] hover:border-transparent hover:scale-110 hover:shadow-lg"
+                  className="w-8 h-8 sm:w-10 sm:h-10 lg:w-11 lg:h-11 rounded-full flex justify-center items-center  border border-[#C9A876]/30  transition-all duration-300 bg-[#dac098] hover:bg-[#C9A876] text-black hover:text-[#140D0A] hover:border-transparent hover:scale-110 hover:shadow-lg"
                   style={{ transitionDelay: `${index * 50}ms` }}
                   title={social.label}
                 >
@@ -157,19 +157,19 @@ const Banner = () => {
                       <FontAwesomeIcon icon={faCode} className="text-[#C9A876] text-sm sm:text-base lg:text-xl" />
                     </div>
                     <div>
-                      <p className="text-[10px] sm:text-xs lg:text-sm text-[#F5EFE6]/60 font-['Inter'] uppercase tracking-wider">LeetCode</p>
+                      <p className="text-[10px] sm:text-xs lg:text-sm text-white font-['Inter'] uppercase tracking-wider">LeetCode</p>
                       <p className="text-xs sm:text-sm lg:text-base font-semibold text-[#C9A876] font-['Inter']">230+ Problems</p>
                     </div>
                   </div>
                   <div className="w-px h-8 sm:h-10 lg:h-12 bg-[#C9A876]/20"></div>
                   <div className="text-left">
-                    <p className="text-[10px] sm:text-xs lg:text-sm text-[#F5EFE6]/60 font-['Inter'] uppercase tracking-wider">Solved</p>
-                    <p className="text-xs sm:text-sm lg:text-base font-semibold text-[#F5EFE6] font-['Inter']">230+</p>
+                    <p className="text-[10px] sm:text-xs lg:text-sm text-white font-['Inter'] uppercase tracking-wider">Solved</p>
+                    <p className="text-xs sm:text-sm lg:text-base font-semibold text-[#C9A876] font-['Inter']">230+</p>
                   </div>
                   <div className="w-px h-8 sm:h-10 lg:h-12 bg-[#C9A876]/20"></div>
                   <div className="text-left">
-                    <p className="text-[10px] sm:text-xs lg:text-sm text-[#F5EFE6]/60 font-['Inter'] uppercase tracking-wider">Ranking</p>
-                    <p className="text-xs sm:text-sm lg:text-base font-semibold text-[#F5EFE6] font-['Inter']">697,021</p>
+                    <p className="text-[10px] sm:text-xs lg:text-sm text-white font-['Inter'] uppercase tracking-wider">Ranking</p>
+                    <p className="text-xs sm:text-sm lg:text-base font-semibold text-[#C9A876] font-['Inter']">697,021</p>
                   </div>
                 </div>
               </a>
@@ -178,12 +178,12 @@ const Banner = () => {
             {/* Stats - Right side top */}
             <div className="absolute right-4 sm:right-6 lg:right-10 top-8 sm:top-12 lg:top-16 z-30 text-right">
               <div className="mb-3 sm:mb-4">
-                <p className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-bold text-[#C9A876] font-['Inter']">4+</p>
-                <p className="text-[7px] sm:text-[8px] lg:text-[9px] text-[#F5EFE6]/60 font-['Inter'] uppercase tracking-wider">Years Experience</p>
+                <p className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-bold text-white font-['Inter']">2+</p>
+                <p className="text-[7px] sm:text-[8px] lg:text-[9px] text-white font-['Inter'] uppercase tracking-wider">Years Experience</p>
               </div>
               <div>
-                <p className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-bold text-[#C9A876] font-['Inter']">10+</p>
-                <p className="text-[7px] sm:text-[8px] lg:text-[9px] text-[#F5EFE6]/60 font-['Inter'] uppercase tracking-wider">Projects Completed</p>
+                <p className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-bold text-white  font-['Inter']">10+</p>
+                <p className="text-[7px] sm:text-[8px] lg:text-[9px] text-white font-['Inter'] uppercase tracking-wider">Projects Completed</p>
               </div>
             </div>
           </div>

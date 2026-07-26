@@ -1,23 +1,47 @@
 import { useEffect, useRef, useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faReact,
+  faNodeJs,
+  faPython,
+  faJs,
+  faGitAlt,
+  faHtml5,
+  faCss3Alt,
+  faFigma,
+  faGithub,
+} from "@fortawesome/free-brands-svg-icons";
+import {
+  faPalette,
+  faServer,
+  faCode,
+  faTools,
+  faDatabase,
+  faCloud,
+  faLaptopCode,
+  faCogs,
+  faSquare,
+} from "@fortawesome/free-solid-svg-icons";
 
 const skillCategories = [
   {
     title: "Frontend",
-    icon: "🎨",
+    icon: faPalette,
+    iconColor: "#C9A876",
     skills: [
       "React Js",
       "Next Js",
-      "HTML",
-      "CSS",
+      "HTML5",
+      "CSS3",
       "JavaScript",
-      "Material UI",
       "Tailwind CSS",
       "DaisyUI",
     ],
   },
   {
     title: "Backend",
-    icon: "⚙️",
+    icon: faServer,
+    iconColor: "#C9A876",
     skills: [
       "Node Js",
       "Python",
@@ -29,13 +53,15 @@ const skillCategories = [
     ],
   },
   {
-    title: "Programming Languages",
-    icon: "💻",
+    title: "Programming",
+    icon: faCode,
+    iconColor: "#C9A876",
     skills: ["JavaScript", "TypeScript", "Python", "C++", "C"],
   },
   {
     title: "Tools & Platforms",
-    icon: "🛠️",
+    icon: faTools,
+    iconColor: "#C9A876",
     skills: [
       "Git",
       "GitHub",
@@ -69,37 +95,66 @@ const Skills = () => {
   }, []);
 
   return (
-    <section id="skills" ref={sectionRef} className="bg-white py-20 px-6">
-      <div className="max-w-6xl mx-auto text-center">
+    <section
+      id="skills"
+      ref={sectionRef}
+      className="py-20 px-6 border-b-[14px] border-white bg-[#140D0A] overflow-hidden relative"
+    >
+      {/* Decorative gradient background */}
+      <div className="absolute inset-0 bg-gradient-to-tr from-[#C9A876]/5 via-transparent to-[#C9A876]/5"></div>
+
+      {/* Decorative circles */}
+      <div className="absolute top-20 left-10 w-64 h-64 bg-[#C9A876]/5 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-20 right-10 w-80 h-80 bg-[#C9A876]/5 rounded-full blur-3xl"></div>
+
+      <div className="max-w-6xl mx-auto text-center relative z-10">
+        <span
+          className={`inline-block text-[#C9A876] tracking-[5px] uppercase text-xs font-medium mb-2 font-['Inter'] transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-6"
+            }`}
+        >
+          | My Skills |
+        </span>
+
         <h2
-          className={`text-3xl md:text-4xl font-bold text-gray-800 mb-3 transition-all duration-700 ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-6"
-          }`}
+          className={`font-['Playfair_Display'] text-3xl md:text-4xl lg:text-5xl font-bold text-[#F5EFE6] mb-3 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-6"
+            }`}
         >
-          My Skills
+          My <span className="text-[#C9A876]">Expertise</span>
         </h2>
+
         <p
-          className={`text-gray-500 mb-14 max-w-2xl mx-auto transition-all duration-700 delay-100 ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-6"
-          }`}
+          className={`text-[#F5EFE6]/60 mb-14 max-w-2xl mx-auto font-['Inter'] transition-all duration-700 delay-100 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-6"
+            }`}
         >
-          Expertise in building modern web applications and advanced AI
-          solutions.
+          Expertise in building modern web applications with cutting-edge technologies
+          and best practices.
         </p>
+
+        {/* Full width divider */}
+        <div className="relative w-screen left-1/2 -translate-x-1/2 h-px bg-gradient-to-r from-transparent via-[#C9A876]/30 to-transparent mb-14"></div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {skillCategories.map((category, catIndex) => (
             <div
               key={category.title}
-              className={`bg-gray-50 rounded-2xl p-6 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-500 ease-out border border-gray-100 ${
-                isVisible
+              className={`group bg-[#2A1D16]/50 backdrop-blur-sm rounded-2xl p-6 border border-[#C9A876]/20 hover:border-[#C9A876]/60 hover:shadow-2xl hover:shadow-[#C9A876]/10 hover:-translate-y-2 transition-all duration-500 ease-out ${isVisible
                   ? "opacity-100 translate-y-0"
                   : "opacity-0 translate-y-10"
-              }`}
+                }`}
               style={{ transitionDelay: `${catIndex * 150}ms` }}
             >
-              <div className="text-4xl mb-4">{category.icon}</div>
-              <h3 className="text-lg font-semibold text-gray-800 mb-4">
+              <div className="relative">
+                {/* Icon background glow */}
+                <div className="absolute inset-0 bg-[#C9A876]/10 blur-2xl rounded-full -z-10 group-hover:blur-3xl transition-all duration-500"></div>
+                <div className="w-16 h-16 mx-auto rounded-full bg-[#C9A876]/10 flex items-center justify-center mb-4 group-hover:bg-[#C9A876]/20 transition-all duration-300">
+                  <FontAwesomeIcon
+                    icon={category.icon}
+                    className="text-3xl text-[#C9A876] group-hover:scale-110 transition-all duration-300"
+                  />
+                </div>
+              </div>
+
+              <h3 className="text-lg font-semibold text-[#F5EFE6] mb-4 font-['Inter']">
                 {category.title}
               </h3>
 
@@ -107,9 +162,8 @@ const Skills = () => {
                 {category.skills.map((skill, skillIndex) => (
                   <span
                     key={skill}
-                    className={`bg-blue-50 text-blue-700 text-sm font-medium px-3 py-1.5 rounded-full hover:bg-blue-600 hover:text-white transition-all duration-300 ${
-                      isVisible ? "opacity-100 scale-100" : "opacity-0 scale-75"
-                    }`}
+                    className={`bg-[#C9A876]/10 text-[#C9A876] text-sm font-medium px-3 py-1.5 rounded-full border border-[#C9A876]/20 hover:bg-[#C9A876] hover:text-[#140D0A] hover:border-[#C9A876] transition-all duration-300 cursor-default ${isVisible ? "opacity-100 scale-100" : "opacity-0 scale-75"
+                      }`}
                     style={{
                       transitionDelay: `${catIndex * 150 + skillIndex * 60}ms`,
                     }}
@@ -120,6 +174,29 @@ const Skills = () => {
               </div>
             </div>
           ))}
+        </div>
+
+        {/* Additional Stats */}
+        <div
+          className={`mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto transition-all duration-700 delay-300 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+            }`}
+        >
+          <div className="bg-[#2A1D16]/30 border border-[#C9A876]/20 rounded-xl px-4 py-3 hover:border-[#C9A876]/50 transition-all duration-300">
+            <p className="text-2xl font-bold text-[#C9A876] font-['Inter']">20+</p>
+            <p className="text-xs text-[#F5EFE6]/50 font-['Inter'] uppercase tracking-wider">Technologies</p>
+          </div>
+          <div className="bg-[#2A1D16]/30 border border-[#C9A876]/20 rounded-xl px-4 py-3 hover:border-[#C9A876]/50 transition-all duration-300">
+            <p className="text-2xl font-bold text-[#C9A876] font-['Inter']">10+</p>
+            <p className="text-xs text-[#F5EFE6]/50 font-['Inter'] uppercase tracking-wider">Projects</p>
+          </div>
+          <div className="bg-[#2A1D16]/30 border border-[#C9A876]/20 rounded-xl px-4 py-3 hover:border-[#C9A876]/50 transition-all duration-300">
+            <p className="text-2xl font-bold text-[#C9A876] font-['Inter']">4+</p>
+            <p className="text-xs text-[#F5EFE6]/50 font-['Inter'] uppercase tracking-wider">Years Experience</p>
+          </div>
+          <div className="bg-[#2A1D16]/30 border border-[#C9A876]/20 rounded-xl px-4 py-3 hover:border-[#C9A876]/50 transition-all duration-300">
+            <p className="text-2xl font-bold text-[#C9A876] font-['Inter']">24/7</p>
+            <p className="text-xs text-[#F5EFE6]/50 font-['Inter'] uppercase tracking-wider">Available</p>
+          </div>
         </div>
       </div>
     </section>

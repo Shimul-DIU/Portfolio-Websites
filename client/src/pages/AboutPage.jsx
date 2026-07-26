@@ -14,7 +14,7 @@ import {
   faPhone,
 } from "@fortawesome/free-solid-svg-icons";
 
-const About = () => {
+const AboutPage = () => {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef(null);
 
@@ -43,8 +43,8 @@ const About = () => {
         {/* Left Column - Image */}
         <div
           className={`relative flex  items-center justify-center  transition-all duration-1000 ease-out ${isVisible
-              ? "opacity-100 translate-x-0"
-              : "opacity-0 -translate-x-10"
+            ? "opacity-100 translate-x-0"
+            : "opacity-0 -translate-x-10"
             }`}
         >
           <div className="relative  ">
@@ -145,4 +145,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default AboutPage;

@@ -1,216 +1,206 @@
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faCode,
+  faReact,
+  faNodeJs,
+  faPython,
+  faJs,
+  faGitAlt,
+  faHtml5,
+  faCss3Alt,
+  faFigma,
+  faGithub,
+} from "@fortawesome/free-brands-svg-icons";
+import {
+  faPalette,
   faServer,
-  faDatabase,
-  faKey,
+  faCode,
   faTools,
-  faLayerGroup,
-  faChartLine,
+  faDatabase,
+  faCloud,
+  faLaptopCode,
+  faCogs,
+  faSquare,
 } from "@fortawesome/free-solid-svg-icons";
 
-const SKILL_GROUPS = [
+const skillCategories = [
   {
     title: "Frontend",
-    icon: faCode,
+    icon: faPalette,
+    iconColor: "#C9A876",
     skills: [
-      { label: "HTML5", level: 90 },
-      { label: "CSS3", level: 85 },
-      { label: "Tailwind CSS", level: 90 },
-      { label: "JavaScript (ES6+)", level: 90 },
-      { label: "TypeScript", level: 75 },
-      { label: "React.js", level: 90 },
+      "React Js",
+      "Next Js",
+      "HTML5",
+      "CSS3",
+      "JavaScript",
+      "Tailwind CSS",
+      "DaisyUI",
     ],
   },
   {
     title: "Backend",
     icon: faServer,
+    iconColor: "#C9A876",
     skills: [
-      { label: "Node.js", level: 80 },
-      { label: "Express.js", level: 80 },
-      { label: "REST APIs", level: 85 },
+      "Node Js",
+      "Python",
+      "MySQL",
+      "MongoDB",
+      "Firebase",
+      "Nest JS",
+      "Express Js",
     ],
   },
   {
-    title: "Database",
-    icon: faDatabase,
-    skills: [
-      { label: "MongoDB", level: 80 },
-      { label: "MySQL", level: 75 },
-    ],
+    title: "Programming",
+    icon: faCode,
+    iconColor: "#C9A876",
+    skills: ["JavaScript", "TypeScript", "Python", "C++", "C"],
   },
   {
-    title: "Authentication",
-    icon: faKey,
-    skills: [
-      { label: "JWT", level: 80 },
-      { label: "Passport.js", level: 70 },
-    ],
-  },
-  {
-    title: "Tools",
+    title: "Tools & Platforms",
     icon: faTools,
+    iconColor: "#C9A876",
     skills: [
-      { label: "Git", level: 85 },
-      { label: "GitHub", level: 85 },
-      { label: "VS Code", level: 90 },
-      { label: "Postman", level: 80 },
-    ],
-  },
-  {
-    title: "Core Concepts",
-    icon: faLayerGroup,
-    skills: [
-      { label: "OOP", level: 80 },
-      { label: "Data Structures & Algorithms", level: 80 },
-      { label: "DBMS", level: 75 },
-      { label: "REST API Design", level: 80 },
-      { label: "Computer Networks", level: 70 },
-      { label: "Operating Systems", level: 70 },
+      "Git",
+      "GitHub",
+      "Netlify",
+      "VS Code",
+      "Postman",
+      "Figma",
+      "Canva",
+      "Google Colab",
     ],
   },
 ];
 
-function SkillBar({ label, level, animate, dark }) {
-  return (
-    <div className="mb-3 last:mb-0">
-      <div className="flex justify-between mb-1">
-        <span
-          className={`text-sm font-medium ${dark ? "text-white/90" : "text-gray-700"}`}
-        >
-          {label}
-        </span>
-        <span className={`text-xs ${dark ? "text-white/60" : "text-gray-400"}`}>
-          {level}%
-        </span>
-      </div>
-      <div
-        className={`h-2 w-full rounded-full overflow-hidden ${dark ? "bg-white/20" : "bg-white/60"}`}
-      >
-        <div
-          className={`h-full rounded-full transition-all duration-1000 ease-out ${
-            dark ? "bg-white" : "bg-linear-to-r from-[#CF15D4] to-[#7B14F9]"
-          }`}
-          style={{ width: animate ? `${level}%` : "0%" }}
-        />
-      </div>
-    </div>
-  );
-}
-
-function SkillCard({ title, icon, skills, className }) {
-  const cardRef = useRef(null);
-  const [animate, setAnimate] = useState(false);
-  const dark = Boolean(className);
+const Skills = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef(null);
 
   useEffect(() => {
-    const el = cardRef.current;
-    if (!el) return;
-
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setAnimate(true);
+          setIsVisible(true);
           observer.disconnect();
         }
       },
-      { threshold: 0.2 },
+      { threshold: 0.15 },
     );
 
-    observer.observe(el);
+    if (sectionRef.current) observer.observe(sectionRef.current);
     return () => observer.disconnect();
   }, []);
 
   return (
-    <div
-      ref={cardRef}
-      className={`rounded-2xl shadow-md hover:shadow-lg transition-all duration-200 p-6 ${
-        className || "bg-linear-to-br from-purple-50 via-white to-pink-50"
-      }`}
+    <section
+      id="skills"
+      ref={sectionRef}
+      className="py-20 px-6 bg-[#140D0A] overflow-hidden relative"
     >
-      <div className="flex items-center gap-3 mb-5">
+      {/* Decorative gradient background */}
+      <div className="absolute inset-0 bg-gradient-to-tr from-[#C9A876]/5 via-transparent to-[#C9A876]/5"></div>
+
+      {/* Decorative circles */}
+      <div className="absolute top-20 left-10 w-64 h-64 bg-[#C9A876]/5 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-20 right-10 w-80 h-80 bg-[#C9A876]/5 rounded-full blur-3xl"></div>
+
+      <div className="max-w-6xl mx-auto text-center relative z-10">
         <span
-          className={`flex items-center justify-center w-10 h-10 rounded-full shrink-0 ${
-            dark
-              ? "bg-white/20 text-white"
-              : "bg-linear-to-bl from-[#CF15D4] to-[#7B14F9] text-white"
-          }`}
+          className={`inline-block text-[#C9A876] tracking-[5px] uppercase text-xs font-medium mb-2 font-['Inter'] transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-6"
+            }`}
         >
-          <FontAwesomeIcon icon={icon} className="text-sm" />
+          | My Skills |
         </span>
-        <h3
-          className={`font-semibold ${dark ? "text-white" : "text-gray-800"}`}
+
+        <h2
+          className={`font-['Playfair_Display'] text-3xl md:text-4xl lg:text-5xl font-bold text-[#F5EFE6] mb-3 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-6"
+            }`}
         >
-          {title}
-        </h3>
-      </div>
+          My <span className="text-[#C9A876]">Expertise</span>
+        </h2>
 
-      {skills.map((s) => (
-        <SkillBar key={s.label} {...s} animate={animate} dark={dark} />
-      ))}
-    </div>
-  );
-}
+        <p
+          className={`text-[#F5EFE6]/60 mb-14 max-w-2xl mx-auto font-['Inter'] transition-all duration-700 delay-100 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-6"
+            }`}
+        >
+          Expertise in building modern web applications with cutting-edge technologies
+          and best practices.
+        </p>
 
-export default function Skills() {
-  return (
-    <div className="bg-gray-50 min-h-screen">
-      {/* Hero */}
-      <div className="bg-linear-to-bl from-[#CF15D4] to-[#7B14F9] px-4 sm:px-6 lg:px-8 py-16">
-        <div className="max-w-5xl mx-auto text-center">
-          <h1 className="text-3xl sm:text-4xl font-bold text-white">Skills</h1>
-          <p className="mt-3 text-white/85 max-w-xl mx-auto">
-            Technologies and tools I use to build full-stack web applications,
-            from the browser down to the database.
-          </p>
-        </div>
-      </div>
+        {/* Full width divider */}
+        <div className="relative w-screen left-1/2 -translate-x-1/2 h-px bg-gradient-to-r from-transparent via-[#C9A876]/30 to-transparent mb-14"></div>
 
-      {/* Skill cards */}
-      <div className="max-w-5xl  mx-auto px-4 sm:px-6 lg:px-8 -mt-10 pb-16">
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 ">
-          {SKILL_GROUPS.map((group) => (
-            <SkillCard
-              key={group.title}
-              {...group}
-              className="bg-linear-to-bl from-[#CF15D4] to-[#7B14F9] "
-            />
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {skillCategories.map((category, catIndex) => (
+            <div
+              key={category.title}
+              className={`group bg-[#2A1D16]/50 backdrop-blur-sm rounded-2xl p-6 border border-[#C9A876]/20 hover:border-[#C9A876]/60 hover:shadow-2xl hover:shadow-[#C9A876]/10 hover:-translate-y-2 transition-all duration-500 ease-out ${isVisible
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-10"
+                }`}
+              style={{ transitionDelay: `${catIndex * 150}ms` }}
+            >
+              <div className="relative">
+                {/* Icon background glow */}
+                <div className="absolute inset-0 bg-[#C9A876]/10 blur-2xl rounded-full -z-10 group-hover:blur-3xl transition-all duration-500"></div>
+                <div className="w-16 h-16 mx-auto rounded-full bg-[#C9A876]/10 flex items-center justify-center mb-4 group-hover:bg-[#C9A876]/20 transition-all duration-300">
+                  <FontAwesomeIcon
+                    icon={category.icon}
+                    className="text-3xl text-[#C9A876] group-hover:scale-110 transition-all duration-300"
+                  />
+                </div>
+              </div>
+
+              <h3 className="text-lg font-semibold text-[#F5EFE6] mb-4 font-['Inter']">
+                {category.title}
+              </h3>
+
+              <div className="flex flex-wrap gap-2 justify-center">
+                {category.skills.map((skill, skillIndex) => (
+                  <span
+                    key={skill}
+                    className={`bg-[#C9A876]/10 text-[#C9A876] text-sm font-medium px-3 py-1.5 rounded-full border border-[#C9A876]/20 hover:bg-[#C9A876] hover:text-[#140D0A] hover:border-[#C9A876] transition-all duration-300 cursor-default ${isVisible ? "opacity-100 scale-100" : "opacity-0 scale-75"
+                      }`}
+                    style={{
+                      transitionDelay: `${catIndex * 150 + skillIndex * 60}ms`,
+                    }}
+                  >
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
           ))}
         </div>
 
-        {/* Problem solving strip */}
-        <div className="mt-6 bg-linear-to-bl from-[#CF15D4]  to-[#7B14F9] rounded-2xl shadow-md hover:shadow-lg transition-all duration-200 p-6">
-          <div className="flex items-center gap-3 mb-5">
-            <span className="flex items-center justify-center w-10 h-10 rounded-full bg-linear-to-bl from-[#CF15D4] to-[#7B14F9] text-white shrink-0">
-              <FontAwesomeIcon icon={faChartLine} className="text-sm" />
-            </span>
-            <div>
-              <h3 className="font-semibold text-white">Problem Solving</h3>
-              <p className="text-xs text-white">
-                226 problems solved on LeetCode
-              </p>
-            </div>
+        {/* Additional Stats */}
+        <div
+          className={`mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto transition-all duration-700 delay-300 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+            }`}
+        >
+          <div className="bg-[#2A1D16]/30 border border-[#C9A876]/20 rounded-xl px-4 py-3 hover:border-[#C9A876]/50 transition-all duration-300">
+            <p className="text-2xl font-bold text-[#C9A876] font-['Inter']">20+</p>
+            <p className="text-xs text-[#F5EFE6]/50 font-['Inter'] uppercase tracking-wider">Technologies</p>
           </div>
-
-          <div className="grid grid-cols-2 sm:grid-cols-5 gap-4 text-center">
-            {[
-              { label: "Python3", count: 164 },
-              { label: "MySQL", count: 44 },
-              { label: "JavaScript", count: 12 },
-              { label: "TypeScript", count: 2 },
-              { label: "C++", count: 1 },
-            ].map((row) => (
-              <div key={row.label} className="rounded-xl bg-white py-3">
-                <div className="text-xl font-bold text-black">
-                  {row.count}
-                </div>
-                <div className="text-xs text-black mt-1">{row.label}</div>
-              </div>
-            ))}
+          <div className="bg-[#2A1D16]/30 border border-[#C9A876]/20 rounded-xl px-4 py-3 hover:border-[#C9A876]/50 transition-all duration-300">
+            <p className="text-2xl font-bold text-[#C9A876] font-['Inter']">10+</p>
+            <p className="text-xs text-[#F5EFE6]/50 font-['Inter'] uppercase tracking-wider">Projects</p>
+          </div>
+          <div className="bg-[#2A1D16]/30 border border-[#C9A876]/20 rounded-xl px-4 py-3 hover:border-[#C9A876]/50 transition-all duration-300">
+            <p className="text-2xl font-bold text-[#C9A876] font-['Inter']">4+</p>
+            <p className="text-xs text-[#F5EFE6]/50 font-['Inter'] uppercase tracking-wider">Years Experience</p>
+          </div>
+          <div className="bg-[#2A1D16]/30 border border-[#C9A876]/20 rounded-xl px-4 py-3 hover:border-[#C9A876]/50 transition-all duration-300">
+            <p className="text-2xl font-bold text-[#C9A876] font-['Inter']">24/7</p>
+            <p className="text-xs text-[#F5EFE6]/50 font-['Inter'] uppercase tracking-wider">Available</p>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
-}
+};
+
+export default Skills;

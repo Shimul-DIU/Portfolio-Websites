@@ -12,7 +12,7 @@ import logo from "../../public/images/icon.png";
 
 const navLinks = [
   { to: "/", label: "Home" },
-  { to: "/about", label: "About Me" },
+  { to: "/about", label: "About" },
   { to: "/projects", label: "Projects" },
   { to: "/skills", label: "Skills" },
   { to: "/blog", label: "Blog" },
