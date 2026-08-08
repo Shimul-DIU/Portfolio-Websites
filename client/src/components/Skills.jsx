@@ -98,16 +98,17 @@ const Skills = () => {
     <section
       id="skills"
       ref={sectionRef}
-      className="py-20 px-6 border-b-[14px] border-white bg-[#140D0A] overflow-hidden relative"
+      className="max-w-7xl mx-auto py-20 px-3 sm:px-6 lg:px-8  overflow-hidden relative"
     >
       {/* Decorative gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-tr from-[#C9A876]/5 via-transparent to-[#C9A876]/5"></div>
+      <div className="absolute inset-0 bg-[#140D0A]"></div>
 
       {/* Decorative circles */}
       <div className="absolute top-20 left-10 w-64 h-64 bg-[#C9A876]/5 rounded-full blur-3xl"></div>
       <div className="absolute bottom-20 right-10 w-80 h-80 bg-[#C9A876]/5 rounded-full blur-3xl"></div>
 
-      <div className="max-w-6xl mx-auto text-center relative z-10">
+      {/* Content container with max-w-5xl to match banner/about cards */}
+      <div className="max-w-5xl mx-auto w-full text-center relative z-10">
         <span
           className={`inline-block text-[#C9A876] tracking-[5px] uppercase text-xs font-medium mb-2 font-['Inter'] transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-6"
             }`}
@@ -138,8 +139,8 @@ const Skills = () => {
             <div
               key={category.title}
               className={`group bg-[#2A1D16]/50 backdrop-blur-sm rounded-2xl p-6 border border-[#C9A876]/20 hover:border-[#C9A876]/60 hover:shadow-2xl hover:shadow-[#C9A876]/10 hover:-translate-y-2 transition-all duration-500 ease-out ${isVisible
-                  ? "opacity-100 translate-y-0"
-                  : "opacity-0 translate-y-10"
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-10"
                 }`}
               style={{ transitionDelay: `${catIndex * 150}ms` }}
             >

@@ -88,36 +88,28 @@ const Projects = () => {
     <section
       id="projects"
       ref={sectionRef}
-      className="py-20 px-6 bg-[#140D0A] overflow-hidden relative"
+      className="max-w-7xl mx-auto py-20 px-3 sm:px-6 lg:px-8 bg-[#140D0A] overflow-hidden relative"
     >
       {/* Decorative gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-bl from-[#C9A876]/5 via-transparent to-[#C9A876]/5"></div>
+      <div className="absolute inset-0 bg-[#140D0A]"></div>
 
-      {/* Decorative circles */}
-      <div className="absolute top-20 right-10 w-72 h-72 bg-[#C9A876]/5 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-20 left-10 w-96 h-96 bg-[#C9A876]/5 rounded-full blur-3xl"></div>
+      {/* Decorative circles
+      <div className="absolute top-20 right-10 w-72 h-72"></div>
+      <div className="absolute bottom-20 left-10 w-96 h-96"></div> */}
 
-      <div className="max-w-6xl mx-auto text-center relative z-10">
-        <span
-          className={`inline-block text-[#C9A876] tracking-[5px] uppercase text-xs font-medium mb-2 font-['Inter'] transition-all duration-700 ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-6"
-          }`}
-        >
-          | Portfolio |
-        </span>
+      <div className="max-w-5xl mx-auto w-full text-center relative z-10">
+       
 
         <h2
-          className={`font-['Playfair_Display'] text-3xl md:text-4xl lg:text-5xl font-bold text-[#F5EFE6] mb-3 transition-all duration-700 ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-6"
-          }`}
+          className={`font-['Playfair_Display'] text-3xl md:text-4xl lg:text-5xl font-bold text-[#F5EFE6] mb-3 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-6"
+            }`}
         >
           Featured <span className="text-[#C9A876]">Projects</span>
         </h2>
 
         <p
-          className={`text-[#F5EFE6]/60 mb-14 max-w-2xl mx-auto font-['Inter'] transition-all duration-700 delay-100 ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-6"
-          }`}
+          className={`text-[#F5EFE6]/60 mb-14 max-w-2xl mx-auto font-['Inter'] transition-all duration-700 delay-100 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-6"
+            }`}
         >
           Each project represents a unique challenge solved with creativity and technical expertise.
         </p>
@@ -126,11 +118,10 @@ const Projects = () => {
           {projects.map((project, index) => (
             <div
               key={project.title}
-              className={`group bg-[#2A1D16]/50 backdrop-blur-sm rounded-2xl overflow-hidden border border-[#C9A876]/20 hover:border-[#C9A876]/60 hover:shadow-2xl hover:shadow-[#C9A876]/10 hover:-translate-y-2 transition-all duration-500 ease-out ${
-                isVisible
+              className={`group bg-[#2A1D16]/50 backdrop-blur-sm rounded-2xl overflow-hidden border border-[#C9A876]/20 hover:border-[#C9A876]/60 hover:shadow-2xl hover:shadow-[#C9A876]/10 hover:-translate-y-2 transition-all duration-500 ease-out ${isVisible
                   ? "opacity-100 translate-y-0"
                   : "opacity-0 translate-y-10"
-              }`}
+                }`}
               style={{ transitionDelay: `${index * 150}ms` }}
             >
               {/* Featured Badge */}
@@ -205,9 +196,8 @@ const Projects = () => {
 
         {/* View All Projects Button */}
         <div
-          className={`mt-12 transition-all duration-700 delay-300 ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-          }`}
+          className={`mt-12 transition-all duration-700 delay-300 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+            }`}
         >
           <a
             href="/projects"

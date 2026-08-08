@@ -1,8 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import bgImage from '../../public/images/bg.webp';
+import bgImage from "../../public/images/bg.webp";
 import {
-  faArrowRight,
   faDownload,
   faCode,
 } from "@fortawesome/free-solid-svg-icons";
@@ -11,7 +10,6 @@ import {
   faLinkedin,
   faFacebook,
 } from "@fortawesome/free-brands-svg-icons";
-import { Link } from "react-router-dom";
 import Typed from "typed.js";
 
 const Banner = () => {
@@ -50,174 +48,172 @@ const Banner = () => {
 
   const socialLinks = [
     { icon: faGithub, url: "https://github.com/Shimul-DIU", label: "GitHub" },
-    { icon: faLinkedin, url: "https://www.linkedin.com/in/md-shimul-71a4b3319/", label: "LinkedIn" },
-    { icon: faFacebook, url: "https://www.facebook.com/shimul.mia.79462/", label: "Facebook" },
-    { icon: faCode, url: "https://leetcode.com/u/MdShimul/", label: "LeetCode" }
+    {
+      icon: faLinkedin,
+      url: "https://www.linkedin.com/in/md-shimul-71a4b3319/",
+      label: "LinkedIn",
+    },
+    {
+      icon: faFacebook,
+      url: "https://www.facebook.com/shimul.mia.79462/",
+      label: "Facebook",
+    },
+    {
+      icon: faCode,
+      url: "https://leetcode.com/u/MdShimul/",
+      label: "LeetCode",
+    },
   ];
 
   return (
-    <>
-      <section className="relative min-h-[calc(100vh-64px)] bg-[#140D0A] overflow-hidden flex flex-col">
-        {/* Background Image */}
-        <div className="absolute inset-0 w-full h-full">
-          <img
-            src={bgImage}
-            alt="Background"
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-[#140D0A]/80"></div>
-        </div>
+    <div className="max-w-7xl mx-auto">
+      <section className="bg-[#140D0A] text-white min-h-[calc(100vh-64px)] flex flex-col justify-center py-4 px-3 sm:px-6 lg:px-8">
+        <div className="max-w-5xl mx-auto w-full bg-[#1c1410] rounded-2xl overflow-hidden border border-[#C9A876]/20 shadow-2xl">
 
-        <div className="relative flex-grow grid lg:grid-cols-2 items-center z-20">
-          {/* Left Column - Text Content */}
-          <div className="relative lg:-mt-1 px-6 sm:px-10 lg:pl-16 xl:pl-28 order-2 lg:order-1 text-center lg:text-left py-8 lg:py-0">
-            <span className="inline-block text-[#C9A876] tracking-[5px] uppercase text-xs font-medium mb-3 font-['Inter'] animate-fade-in">
-              | Shimul Mia |
-            </span>
-
-            <h1 className="font-['Playfair_Display'] text-4xl xs:text-5xl sm:text-6xl md:text-6xl lg:text-5xl xl:text-6xl 2xl:text-7xl leading-[1.1] text-white animate-fade-in-up">
-              Full Stack
-              <span className="block">
-                Web <span className="text-cyan-500 italic">Developer</span>
-              </span>
-            </h1>
-
-            <h2 className="font-['Inter'] text-base sm:text-lg md:text-xl lg:text-xl xl:text-2xl font-medium text-white mt-3 animate-fade-in-up animation-delay-200">
-              I'm a{" "}
-              <span
-                ref={typedElement}
-                className="text-cyan-500 italic font-semibold"
+          <div className="relative">
+            <div className="relative h-[220px] sm:h-[280px] lg:h-[340px] w-full overflow-hidden">
+              <img
+                src={bgImage}
+                alt="Cover Background"
+                className="w-full h-full object-cover"
               />
-            </h2>
+            </div>
+            <div className="sm:hidden absolute left-1/2 -translate-x-1/2 -bottom-14 z-30 w-28 h-28 rounded-full border-4 border-[#1c1410] overflow-hidden bg-[#2A1D16] shadow-2xl ring-1 ring-[#C9A876]/30">
+              <img
+                src="https://res.cloudinary.com/t5icq7cq/image/upload/v1784465212/Shimul_envfhk.png"
+                alt="Md. Shimul Profile"
+                className="w-full h-full object-cover object-top"
+              />
+            </div>
+          </div>
 
-            <p className="mt-4 max-w-md mx-auto lg:mx-0 text-sm sm:text-base text-white/80 font-['Inter'] leading-relaxed animate-fade-in-up animation-delay-400">
+          <div className="relative px-4 sm:px-6 lg:px-8 bg-[#1c1410]">
+            <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 pt-16 sm:pt-0 sm:-mt-16 lg:-mt-[72px] pb-4">
+
+              <div className="flex flex-col items-center sm:flex-row sm:items-end gap-0 sm:gap-4 text-center sm:text-left z-20">
+                <div className="hidden sm:block sm:w-36 sm:h-36 lg:w-[152px] lg:h-[152px] rounded-full border-4 border-[#1c1410] overflow-hidden bg-[#2A1D16] shadow-2xl shrink-0 ring-1 ring-[#C9A876]/30">
+                  <img
+                    src="https://res.cloudinary.com/t5icq7cq/image/upload/v1784465212/Shimul_envfhk.png"
+                    alt="Md. Shimul Profile"
+                    className="w-full h-full object-cover object-top"
+                  />
+                </div>
+
+                <div className="mt-2 sm:mt-0 sm:mb-2">
+                  <h1 className="font-['Playfair_Display'] text-2xl sm:text-3xl lg:text-[34px] font-bold text-white leading-tight">
+                    Md. Shimul
+                  </h1>
+                  <h2 className="font-['Inter'] text-xs sm:text-sm font-medium text-white/70 mt-0.5">
+                    I&apos;m a{" "}
+                    <span
+                      ref={typedElement}
+                      className="text-[#C9A876] not-italic font-semibold"
+                    />
+                  </h2>
+                </div>
+              </div>
+
+              <div className="flex flex-col items-center sm:items-end gap-2.5 z-20 w-full sm:w-auto">
+
+                <div className="flex gap-2 sm:gap-3 bg-[#2A1D16] px-3 sm:px-4 py-1.5 sm:py-2 rounded-xl border border-[#C9A876]/30 flex-shrink-0">
+                  <div className="text-center">
+                    <p className="text-xs sm:text-base font-bold text-[#C9A876] font-['Inter']">2+</p>
+                    <p className="text-[7px] sm:text-[9px] text-white/80 font-['Inter'] uppercase tracking-wider">Years Exp.</p>
+                  </div>
+                  <div className="w-px h-5 sm:h-7 bg-[#C9A876]/30 my-auto"></div>
+                  <div className="text-center">
+                    <p className="text-xs sm:text-base font-bold text-[#C9A876] font-['Inter']">10+</p>
+                    <p className="text-[7px] sm:text-[9px] text-white/80 font-['Inter'] uppercase tracking-wider">Projects</p>
+                  </div>
+                </div>
+
+                <div className="flex flex-row flex-nowrap items-center justify-center gap-1.5 sm:gap-2 flex-shrink-0">
+                  <a
+                    href="/files/Cv_of_Md.Shimul.pdf"
+                    download="Cv_of_Md.Shimul.pdf"
+                    className="flex items-center justify-center gap-1 rounded-lg border border-[#C9A876]/40 bg-[#2A1D16] px-2.5 sm:px-3 py-1.5 sm:py-2 text-[10px] sm:text-xs text-[#F5EFE6] transition-all duration-300 hover:bg-[#3a291d] font-['Inter'] whitespace-nowrap"
+                  >
+                    <FontAwesomeIcon icon={faDownload} className="text-[10px] sm:text-xs" />
+                    <span className="hidden xs:inline">Download CV</span>
+                    <span className="xs:hidden">CV</span>
+                  </a>
+
+                  <div className="flex gap-1 sm:gap-1.5">
+                    {socialLinks.map((social, index) => (
+                      <a
+                        key={index}
+                        href={social.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-7 h-7 sm:w-8 sm:h-8 rounded-full flex justify-center items-center border border-[#C9A876]/30 bg-[#2A1D16] hover:bg-[#C9A876] text-[#C9A876] hover:text-[#140D0A] transition-all duration-300 hover:scale-110 shadow-sm"
+                        title={social.label}
+                      >
+                        <FontAwesomeIcon icon={social.icon} className="text-[10px] sm:text-xs" />
+                      </a>
+                    ))}
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+            <p className="hidden sm:block text-right mt-2 max-w-7xl text-start text-xs text-white/60 font-['Inter'] leading-relaxed">
               Building fast, clean full stack applications with React, Node.js
               and MongoDB. Available for entry-level developer roles worldwide.
             </p>
 
-            <div className="flex flex-wrap gap-3 sm:gap-4 mt-6 sm:mt-7 justify-center lg:justify-start animate-fade-in-up animation-delay-600">
-              <Link
-                to="/projects"
-                className="group flex items-center gap-2 rounded-full bg-[#C9A876] px-6 sm:px-8 py-3 sm:py-3.5 text-sm font-semibold text-[#140D0A] transition-all duration-300 hover:bg-[#E8D9BE] hover:scale-105 hover:shadow-2xl shadow-lg font-['Inter']"
-              >
-                View Gallery
-                <FontAwesomeIcon icon={faArrowRight} className="text-xs group-hover:translate-x-1 transition-transform duration-300" />
-              </Link>
+            <p className="sm:hidden text-center text-xs text-white/60 font-['Inter'] leading-relaxed pb-4 -mt-2">
+              Building fast, clean full stack applications with React, Node.js
+              and MongoDB. Available for entry-level developer roles worldwide.
+            </p>
 
-              <a
-                href="/files/Cv_of_Md.Shimul.pdf"
-                download="Cv_of_Md.Shimul.pdf"
-                className="flex items-center gap-2 rounded-full border border-[#C9A876]/40 px-6 sm:px-8 py-3 sm:py-3.5 text-sm text-[#F5EFE6] transition-all duration-300 hover:bg-[#2A1D16] hover:border-[#C9A876] hover:scale-105 font-['Inter']"
-              >
-                <FontAwesomeIcon icon={faDownload} className="text-xs" />
-                Download CV
-              </a>
-            </div>
-
-            {/* Social Icons - Below the buttons */}
-            <div className="flex flex-wrap justify-center lg:justify-start gap-4 sm:gap-5 mt-6 sm:mt-8 animate-fade-in-up animation-delay-800">
-              {socialLinks.map((social, index) => (
-                <a
-                  key={index}
-                  href={social.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-8 h-8 sm:w-10 sm:h-10 lg:w-11 lg:h-11 rounded-full flex justify-center items-center  border border-[#C9A876]/30  transition-all duration-300 bg-[#dac098] hover:bg-[#C9A876] text-black hover:text-[#140D0A] hover:border-transparent hover:scale-110 hover:shadow-lg"
-                  style={{ transitionDelay: `${index * 50}ms` }}
-                  title={social.label}
-                >
-                  <FontAwesomeIcon icon={social.icon} className="text-xs sm:text-sm lg:text-base" />
+            <div className="border-t  border-[#C9A876]/15 pt-3 mt-3">
+              <p className="text-sm md:text-md text-white/50 uppercase tracking-wider font-['Inter'] font-semibold mb-2.5">
+                Achievements
+              </p>
+              <div className="flex pb-3 md:pb-4 max-w-40 justify-between items-center gap-2.5">
+                <a href="#" className="flex-shrink-0">
+                  <img
+                    src="/images/lg2550.png"
+                    alt="50 days problem solve batch"
+                    className="w-10 h-auto sm:w-12 object-contain"
+                  />
                 </a>
-              ))}
-            </div>
-          </div>
-
-          {/* Right Column - Image */}
-          <div className="relative order-1 lg:order-2 h-[42vh] sm:h-[48vh] lg:h-[calc(100vh-64px)] flex items-end lg:items-center justify-center overflow-hidden">
-            <div className="relative h-full lg:h-[80vh] w-auto flex items-end lg:items-center">
-              <img
-                src="https://res.cloudinary.com/t5icq7cq/image/upload/v1784465212/Shimul_envfhk.png"
-                alt="Md Shimul"
-                className="h-full brightness-50 w-auto max-w-none sm:max-w-full object-contain object-bottom relative z-10"
-                style={{ backgroundColor: 'transparent' }}
-              />
-            </div>
-
-            {/* LeetCode Stats Box - Below the image */}
-            <div className="absolute bottom-2 sm:bottom-3 lg:bottom-4 left-1/2 -translate-x-1/2 z-30 w-[90%] sm:w-[80%] lg:w-[70%]">
-              <a
-                href="https://leetcode.com/u/MdShimul/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block bg-[#2A1D16]/90 backdrop-blur-sm border border-[#C9A876]/30 rounded-xl px-4 sm:px-6 py-3 sm:py-4 lg:py-5 transition-all duration-300 hover:border-[#C9A876] hover:bg-[#2A1D16] hover:scale-105"
-              >
-                <div className="flex items-center justify-center gap-3 sm:gap-4 lg:gap-5">
-                  <div className="flex items-center gap-2 sm:gap-3">
-                    <div className="w-6 h-6 sm:w-8 sm:h-8 lg:w-10 lg:h-10 rounded-full bg-[#C9A876]/20 flex items-center justify-center">
-                      <FontAwesomeIcon icon={faCode} className="text-[#C9A876] text-sm sm:text-base lg:text-xl" />
-                    </div>
-                    <div>
-                      <p className="text-[10px] sm:text-xs lg:text-sm text-white font-['Inter'] uppercase tracking-wider">LeetCode</p>
-                      <p className="text-xs sm:text-sm lg:text-base font-semibold text-[#C9A876] font-['Inter']">230+ Problems</p>
-                    </div>
-                  </div>
-                  <div className="w-px h-8 sm:h-10 lg:h-12 bg-[#C9A876]/20"></div>
-                  <div className="text-left">
-                    <p className="text-[10px] sm:text-xs lg:text-sm text-white font-['Inter'] uppercase tracking-wider">Solved</p>
-                    <p className="text-xs sm:text-sm lg:text-base font-semibold text-[#C9A876] font-['Inter']">230+</p>
-                  </div>
-                  <div className="w-px h-8 sm:h-10 lg:h-12 bg-[#C9A876]/20"></div>
-                  <div className="text-left">
-                    <p className="text-[10px] sm:text-xs lg:text-sm text-white font-['Inter'] uppercase tracking-wider">Ranking</p>
-                    <p className="text-xs sm:text-sm lg:text-base font-semibold text-[#C9A876] font-['Inter']">697,021</p>
-                  </div>
-                </div>
-              </a>
-            </div>
-
-            {/* Stats - Right side top */}
-            <div className="absolute right-4 sm:right-6 lg:right-10 top-8 sm:top-12 lg:top-16 z-30 text-right">
-              <div className="mb-3 sm:mb-4">
-                <p className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-bold text-white font-['Inter']">2+</p>
-                <p className="text-[7px] sm:text-[8px] lg:text-[9px] text-white font-['Inter'] uppercase tracking-wider">Years Experience</p>
-              </div>
-              <div>
-                <p className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-bold text-white  font-['Inter']">10+</p>
-                <p className="text-[7px] sm:text-[8px] lg:text-[9px] text-white font-['Inter'] uppercase tracking-wider">Projects Completed</p>
+                <a href="#" className="flex-shrink-0">
+                  <img
+                    src="/images/lg25100.png"
+                    alt="100 days problem solve batch"
+                    className="w-10 h-auto sm:w-12 object-contain"
+                  />
+                </a>
+                <a href="#" className="flex-shrink-0">
+                  <img
+                    src="/images/pull-shark.png"
+                    alt="Pull shark badge"
+                    className="w-10 h-auto sm:w-12 object-contain"
+                  />
+                </a>
               </div>
             </div>
+
           </div>
         </div>
       </section>
 
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Inter:wght@400;500;600;700&display=swap');
-
-        @keyframes fadeIn {
-          from { opacity: 0; transform: translateY(20px); }
-          to { opacity: 1; transform: translateY(0); }
-        }
-
         @keyframes fadeInUp {
-          from { opacity: 0; transform: translateY(30px); }
+          from { opacity: 0; transform: translateY(15px); }
           to { opacity: 1; transform: translateY(0); }
         }
-
-        .animate-fade-in {
-          animation: fadeIn 0.8s ease-out forwards;
-        }
-
-        .animate-fade-in-up {
-          animation: fadeInUp 0.8s ease-out forwards;
-          opacity: 0;
-        }
-
+        .animate-fade-in-up { animation: fadeInUp 0.8s ease-out forwards; }
         .animation-delay-200 { animation-delay: 0.2s; }
-        .animation-delay-400 { animation-delay: 0.4s; }
-        .animation-delay-600 { animation-delay: 0.6s; }
-        .animation-delay-800 { animation-delay: 0.8s; }
+        @media (min-width: 480px) {
+          .xs\\:inline { display: inline; }
+          .xs\\:hidden { display: none; }
+        }
       `}</style>
-    </>
+    </div>
   );
 };
 

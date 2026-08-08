@@ -37,8 +37,8 @@ const Navbar = () => {
     "ring-1 ring-transparent hover:ring-[#C9A876]/50 focus-within:ring-2 focus-within:ring-[#C9A876] transition-all duration-200";
 
   return (
-    <>
-      <nav className="sticky top-0 z-50 bg-[#140D0A] border-b border-[#C9A876]/20 shadow-lg">
+    <div className="max-w-7xl mx-auto">
+      <nav className="sticky  top-0 z-50 bg-[#140D0A] border-b border-[#C9A876]/20 shadow-lg">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="relative flex items-center h-16 gap-4 lg:gap-6">
             {/* Logo */}
@@ -219,7 +219,7 @@ const Navbar = () => {
           onClick={() => setIsOpen(false)}
         />
       )}
-    </>
+    </div>
   );
 };
 
