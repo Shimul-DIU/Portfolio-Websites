@@ -98,23 +98,18 @@ const Skills = () => {
     <section
       id="skills"
       ref={sectionRef}
-      className="max-w-7xl mx-auto py-20 px-3 sm:px-6 lg:px-8  overflow-hidden relative"
+      className="max-w-7xl mx-auto py-10 px-3 sm:px-6 lg:px-8  overflow-hidden relative"
     >
       {/* Decorative gradient background */}
-      <div className="absolute inset-0 bg-[#140D0A]"></div>
+      <div className="absolute inset-0 bg-[#0F1117]"></div>
 
       {/* Decorative circles */}
-      <div className="absolute top-20 left-10 w-64 h-64 bg-[#C9A876]/5 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-20 right-10 w-80 h-80 bg-[#C9A876]/5 rounded-full blur-3xl"></div>
+      {/* <div className="absolute top-20 left-10 w-64 h-64 bg-[#C9A876]/5 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-20 right-10 w-80 h-80 bg-[#C9A876]/5 rounded-full blur-3xl"></div> */}
 
       {/* Content container with max-w-5xl to match banner/about cards */}
-      <div className="max-w-5xl mx-auto w-full text-center relative z-10">
-        <span
-          className={`inline-block text-[#C9A876] tracking-[5px] uppercase text-xs font-medium mb-2 font-['Inter'] transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-6"
-            }`}
-        >
-          | My Skills |
-        </span>
+      <div className="max-w-5xl p-2 md:p-8 bg-[#171923] rounded-2xl mx-auto w-full text-center relative z-10">
+
 
         <h2
           className={`font-['Playfair_Display'] text-3xl md:text-4xl lg:text-5xl font-bold text-[#F5EFE6] mb-3 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-6"
@@ -124,7 +119,7 @@ const Skills = () => {
         </h2>
 
         <p
-          className={`text-[#F5EFE6]/60 mb-14 max-w-2xl mx-auto font-['Inter'] transition-all duration-700 delay-100 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-6"
+          className={`text-[#F5EFE6]/60 italic mb-7 max-w-2xl mx-auto font-['Inter'] transition-all duration-700 delay-100 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-6"
             }`}
         >
           Expertise in building modern web applications with cutting-edge technologies
@@ -132,13 +127,13 @@ const Skills = () => {
         </p>
 
         {/* Full width divider */}
-        <div className="relative w-screen left-1/2 -translate-x-1/2 h-px bg-gradient-to-r from-transparent via-[#C9A876]/30 to-transparent mb-14"></div>
+        <div className="relative w-screen left-1/2 -translate-x-1/2 h-px bg-gradient-to-r from-transparent via-[#C9A876]/30 to-transparent mb-6"></div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {skillCategories.map((category, catIndex) => (
             <div
               key={category.title}
-              className={`group bg-[#2A1D16]/50 backdrop-blur-sm rounded-2xl p-6 border border-[#C9A876]/20 hover:border-[#C9A876]/60 hover:shadow-2xl hover:shadow-[#C9A876]/10 hover:-translate-y-2 transition-all duration-500 ease-out ${isVisible
+              className={`group bg-[#171923]/50 backdrop-blur-sm rounded-2xl py-6 border border-[#C9A876]/20 hover:border-[#C9A876]/60 hover:shadow-2xl hover:shadow-[#C9A876]/10 hover:-translate-y-2 transition-all duration-500 ease-out ${isVisible
                 ? "opacity-100 translate-y-0"
                 : "opacity-0 translate-y-10"
                 }`}
@@ -179,24 +174,24 @@ const Skills = () => {
 
         {/* Additional Stats */}
         <div
-          className={`mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto transition-all duration-700 delay-300 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+          className={`mt-8 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto transition-all duration-700 delay-300 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
             }`}
         >
-          <div className="bg-[#2A1D16]/30 border border-[#C9A876]/20 rounded-xl px-4 py-3 hover:border-[#C9A876]/50 transition-all duration-300">
-            <p className="text-2xl font-bold text-[#C9A876] font-['Inter']">20+</p>
+          <div className="bg-[#171923] border border-[#C9A876]/20 rounded-xl px-4 py-3 hover:border-[#C9A876]/50 transition-all duration-300">
+            <p className="text-sm sm:text-lg md:text-lg font-bold text-[#C9A876] font-['Inter']">20+</p>
             <p className="text-xs text-[#F5EFE6]/50 font-['Inter'] uppercase tracking-wider">Technologies</p>
           </div>
-          <div className="bg-[#2A1D16]/30 border border-[#C9A876]/20 rounded-xl px-4 py-3 hover:border-[#C9A876]/50 transition-all duration-300">
-            <p className="text-2xl font-bold text-[#C9A876] font-['Inter']">10+</p>
-            <p className="text-xs text-[#F5EFE6]/50 font-['Inter'] uppercase tracking-wider">Projects</p>
+          <div className="bg-[#171923] border border-[#C9A876]/20 rounded-xl px-4 py-3 hover:border-[#C9A876]/50 transition-all duration-300">
+            <p className="text-sm sm:text-lg md:text-lg font-bold text-[#C9A876] font-['Inter']">10+</p>
+            <p className="text-xs sm:text-md text-[#F5EFE6]/50 font-['Inter'] uppercase tracking-wider">Projects</p>
           </div>
-          <div className="bg-[#2A1D16]/30 border border-[#C9A876]/20 rounded-xl px-4 py-3 hover:border-[#C9A876]/50 transition-all duration-300">
-            <p className="text-2xl font-bold text-[#C9A876] font-['Inter']">4+</p>
-            <p className="text-xs text-[#F5EFE6]/50 font-['Inter'] uppercase tracking-wider">Years Experience</p>
+          <div className="bg-[#171923] border border-[#C9A876]/20 rounded-xl px-4 py-3 hover:border-[#C9A876]/50 transition-all duration-300">
+            <p className="text-sm sm:text-lg md:text-lg font-bold text-[#C9A876] font-['Inter']">4+ Years</p>
+            <p className="text-xs sm:text-md text-[#F5EFE6]/50 font-['Inter'] uppercase tracking-wider"> Experience</p>
           </div>
-          <div className="bg-[#2A1D16]/30 border border-[#C9A876]/20 rounded-xl px-4 py-3 hover:border-[#C9A876]/50 transition-all duration-300">
-            <p className="text-2xl font-bold text-[#C9A876] font-['Inter']">24/7</p>
-            <p className="text-xs text-[#F5EFE6]/50 font-['Inter'] uppercase tracking-wider">Available</p>
+          <div className="bg-[#171923] border border-[#C9A876]/20 rounded-xl px-4 py-3 hover:border-[#C9A876]/50 transition-all duration-300">
+            <p className="text-sm sm:text-lg md:text-lg font-bold text-[#C9A876] font-['Inter']">24/7</p>
+            <p className="text-xs sm:text-md text-[#F5EFE6]/50 font-['Inter'] uppercase tracking-wider">Available</p>
           </div>
         </div>
       </div>

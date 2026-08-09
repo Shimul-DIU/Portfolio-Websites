@@ -25,10 +25,10 @@ const AboutPage = () => {
     <section
       id="about"
       ref={sectionRef}
-      className="max-w-7xl mx-auto min-h-fit bg-[#140D0A] flex items-center py-2 px-3 sm:px-6 lg:px-8 overflow-hidden"
+      className="max-w-7xl mx-auto min-h-fit bg-[#0F1117] flex items-center py-2 px-3 sm:px-6 lg:px-8 overflow-hidden"
     >
       <div
-        className={`max-w-5xl mx-auto w-full bg-[#1C1410] p-3 sm:p-5 rounded-2xl transition-all duration-1000 ease-out delay-200 flex flex-col md:flex-row gap-4 md:gap-6 items-stretch ${isVisible
+        className={`max-w-5xl mx-auto w-full bg-[#171923]  p-3 sm:p-5 rounded-2xl transition-all duration-1000 ease-out delay-200 flex flex-col md:flex-row gap-4 md:gap-6 items-stretch ${isVisible
           ? "opacity-100 translate-x-0"
           : "opacity-0 translate-x-10 lg:translate-x-16"
           }`}
@@ -57,7 +57,7 @@ const AboutPage = () => {
           </div>
 
           {/* Bio Description */}
-          <p className="text-[#F5EFE6]/70 leading-relaxed mb-2 sm:mb-5 font-['Inter'] text-xs sm:text-base">
+          <p className="text-[#F5EFE6]/70 italic leading-relaxed mb-2 sm:mb-5 font-['Inter'] text-xs sm:text-base">
             Building fast, clean full stack applications with React, Node.js
             and MongoDB. Available for entry-level developer roles worldwide.
             Passionate about creating seamless digital experiences that solve
@@ -124,7 +124,7 @@ const AboutPage = () => {
           {/* Statistics Counter */}
           <div className="grid grid-cols-3 gap-2 sm:gap-4 mb-3 sm:mb-5 pt-1">
             <div>
-              <p className="text-xl sm:text-3xl lg:text-4xl font-bold text-[#C9A876] font-['Inter']">
+              <p className="text-xl sm:text-3xl  font-bold text-[#C9A876] font-['Inter']">
                 10+
               </p>
               <p className="text-[9px] sm:text-xs text-[#F5EFE6]/60 font-['Inter'] uppercase tracking-wider mt-0.5">
@@ -133,7 +133,7 @@ const AboutPage = () => {
             </div>
 
             <div>
-              <p className="text-xl sm:text-3xl lg:text-4xl font-bold text-[#C9A876] font-['Inter']">
+              <p className="text-xl sm:text-3xl  font-bold text-[#C9A876] font-['Inter']">
                 4+
               </p>
               <p className="text-[9px] sm:text-xs text-[#F5EFE6]/60 font-['Inter'] uppercase tracking-wider mt-0.5">
@@ -142,7 +142,7 @@ const AboutPage = () => {
             </div>
 
             <div>
-              <p className="text-xl sm:text-3xl lg:text-4xl font-bold text-[#C9A876] font-['Inter']">
+              <p className="text-xl sm:text-3xl  font-bold text-[#C9A876] font-['Inter']">
                 20+
               </p>
               <p className="text-[9px] sm:text-xs text-[#F5EFE6]/60 font-['Inter'] uppercase tracking-wider mt-0.5">

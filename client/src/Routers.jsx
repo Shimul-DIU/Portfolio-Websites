@@ -8,6 +8,7 @@ import Blog from "./pages/Blog";
 import ResumePage from "./pages/ResumePage";
 import NotFound from "./components/NotFound";
 import AboutPage from "./pages/AboutPage";
+import Contact from "./pages/Contact";
 
 
 let router = createBrowserRouter([
@@ -21,6 +22,7 @@ let router = createBrowserRouter([
       { path: "/Skills", element: <Skills /> },
       { path: "/resume", element: <ResumePage /> },
       { path: "/blog", element: <Blog /> },
+      { path: "/contact", element: <Contact /> },
       { path: "*", element: <NotFound /> },
     ],
   },

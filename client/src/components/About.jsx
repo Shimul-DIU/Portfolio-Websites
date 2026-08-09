@@ -26,10 +26,10 @@ const About = () => {
     <section
       id="about"
       ref={sectionRef}
-      className="max-w-7xl  mx-auto min-h-fit bg-[#0F1117]  flex items-center py-2 px-3 sm:px-6 lg:px-8 overflow-hidden"
+      className="max-w-7xl  mx-auto min-h-fit bg-[#0F1117]  flex items-center py-2 px-3 sm:px-6 lg:px-8  overflow-hidden"
     >
       <div
-        className={`max-w-5xl mx-auto w-full border  border-[#262936] bg-[#171923] p-3 sm:p-5 rounded-2xl transition-all duration-1000 ease-out delay-200 flex flex-col md:flex-row gap-4 md:gap-6 items-stretch ${isVisible
+        className={`max-w-5xl mx-auto w-full border  border-[#262936] bg-[#171923] p-3 sm:p-5 lg:px-8 rounded-2xl transition-all duration-1000 ease-out delay-200 flex flex-col md:flex-row gap-4 md:gap-6 items-stretch ${isVisible
           ? "opacity-100 translate-x-0"
           : "opacity-0 translate-x-10 lg:translate-x-16"
           }`}
@@ -58,7 +58,7 @@ const About = () => {
           </div>
 
           {/* Bio Description */}
-          <p className="text-[#F5EFE6]/70 leading-relaxed mb-2 sm:mb-5 font-['Inter'] text-sm md:text-base">
+          <p className="text-[#F5EFE6]/70 italic leading-relaxed mb-2 sm:mb-5 font-['Inter'] text-xs md:text-base">
             Building fast, clean full stack applications with React, Node.js
             and MongoDB. Available for entry-level developer roles worldwide.
             Passionate about creating seamless digital experiences that solve
@@ -125,7 +125,7 @@ const About = () => {
           {/* Statistics Counter */}
           <div className="grid grid-cols-3 gap-2 sm:gap-4 mb-3 sm:mb-5 pt-1">
             <div>
-              <p className="text-xl sm:text-3xl lg:text-4xl font-bold text-[#C9A876] font-['Inter']">
+              <p className="text-xl sm:text-3xl  font-bold text-[#C9A876] font-['Inter']">
                 10+
               </p>
               <p className="text-[9px] sm:text-xs text-[#F5EFE6]/60 font-['Inter'] uppercase tracking-wider mt-0.5">
@@ -134,7 +134,7 @@ const About = () => {
             </div>
 
             <div>
-              <p className="text-xl sm:text-3xl lg:text-4xl font-bold text-[#C9A876] font-['Inter']">
+              <p className="text-xl sm:text-3xl  font-bold text-[#C9A876] font-['Inter']">
                 4+
               </p>
               <p className="text-[9px] sm:text-xs text-[#F5EFE6]/60 font-['Inter'] uppercase tracking-wider mt-0.5">
@@ -143,7 +143,7 @@ const About = () => {
             </div>
 
             <div>
-              <p className="text-xl sm:text-3xl lg:text-4xl font-bold text-[#C9A876] font-['Inter']">
+              <p className="text-xl sm:text-3xl  font-bold text-[#C9A876] font-['Inter']">
                 20+
               </p>
               <p className="text-[9px] sm:text-xs text-[#F5EFE6]/60 font-['Inter'] uppercase tracking-wider mt-0.5">
@@ -156,7 +156,7 @@ const About = () => {
           <div>
             <a
               href="#contact"
-              className="inline-flex items-center justify-center gap-2.5 rounded-full bg-[#C9A876] px-6 py-2.5 sm:px-8 sm:py-3 text-xs sm:text-sm font-semibold text-[#140D0A] transition-all duration-300 hover:bg-[#E8D9BE] hover:-translate-y-0.5 hover:shadow-xl shadow-md font-['Inter'] w-full sm:w-auto"
+              className="inline-flex items-center justify-center gap-2.5 rounded-full bg-[#C9A876] px-4 py-2.5 sm:px-8 sm:py-3 text-xs sm:text-sm font-semibold text-[#140D0A] transition-all duration-300 hover:bg-[#E8D9BE] hover:-translate-y-0.5 hover:shadow-xl shadow-md font-['Inter'] w-full sm:w-auto"
             >
               <span>Hire Me</span>
               <FontAwesomeIcon icon={faRocket} className="text-xs" />
