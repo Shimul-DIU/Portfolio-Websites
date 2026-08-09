@@ -38,7 +38,7 @@ const Navbar = () => {
 
   return (
     <div className="max-w-7xl mx-auto">
-      <nav className="sticky  top-0 z-50 bg-[#140D0A] border-b border-[#C9A876]/20 shadow-lg">
+      <nav className="sticky  top-0 z-50 bg-[#171923] border-b border-[#C9A876]/20 shadow-lg">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="relative flex items-center h-16 gap-4 lg:gap-6">
             {/* Logo */}
@@ -54,18 +54,18 @@ const Navbar = () => {
             {/* Search bar */}
             <form
               onSubmit={handleSearchSubmit}
-              className={`hidden md:flex items-center shrink-0 w-[clamp(200px,30vw,360px)] bg-[#2A1D16] rounded-full px-4 py-2 transition-all duration-300 ${searchRingClasses}`}
+              className={`hidden md:flex items-center shrink-0 w-[clamp(200px,30vw,360px)] bg-[#C9A876] rounded-full px-4 py-2 transition-all duration-300 ${searchRingClasses}`}
             >
               <FontAwesomeIcon
                 icon={faMagnifyingGlass}
-                className="text-[#C9A876]/60 text-sm mr-2 shrink-0"
+                className="text-black text-sm mr-2 shrink-0"
               />
               <input
                 type="text"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="Search..."
-                className="w-full bg-transparent text-[#F5EFE6] placeholder-[#F5EFE6]/50 text-sm outline-none font-['Inter']"
+                className="w-full bg-transparent text-black placeholder-black text-sm outline-none font-['Inter']"
               />
             </form>
 
@@ -117,7 +117,7 @@ const Navbar = () => {
 
               <button
                 onClick={() => setIsOpen(!isopen)}
-                className="md:hidden text-[#F5EFE6] hover:text-[#C9A876] focus:outline-none p-2 rounded-lg hover:bg-[#2A1D16] transition"
+                className="lg:hidden text-[#F5EFE6] hover:text-[#C9A876] focus:outline-none p-2 rounded-lg hover:bg-[#2A1D16] transition"
                 aria-label="Toggle menu"
               >
                 <FontAwesomeIcon
@@ -133,7 +133,7 @@ const Navbar = () => {
             {/* Mobile Search Overlay */}
             <form
               onSubmit={handleSearchSubmit}
-              className={`md:hidden absolute inset-0 flex items-center gap-2 px-4 bg-[#140D0A] z-10 transition-all duration-300 ${searchOpen
+              className={`md:hidden absolute inset-0 flex items-center gap-2 px-4 bg-[#171923] z-10 transition-all duration-300 ${searchOpen
                   ? "opacity-100 visible"
                   : "opacity-0 invisible pointer-events-none"
                 }`}
@@ -141,13 +141,13 @@ const Navbar = () => {
               <button
                 type="button"
                 onClick={() => setSearchOpen(false)}
-                className="flex items-center justify-center w-9 h-9 shrink-0 rounded-full bg-[#2A1D16] text-[#C9A876] hover:bg-[#C9A876] hover:text-[#140D0A] active:scale-90 transition"
+                className="flex items-center justify-center w-9 h-9 shrink-0 rounded-full bg-[#C9A876] text-black hover:bg-[#C9A876] hover:text-[#140D0A] active:scale-90 transition"
                 aria-label="Close search"
               >
                 <FontAwesomeIcon icon={faArrowLeft} />
               </button>
               <div
-                className={`flex-1 flex items-center bg-[#2A1D16] rounded-full px-4 py-2 transition-all duration-300 ${searchRingClasses}`}
+                className={`flex-1 flex items-center bg-[#C9A876] rounded-full px-4 py-2 transition-all duration-300 ${searchRingClasses}`}
               >
                 <input
                   autoFocus
@@ -155,7 +155,7 @@ const Navbar = () => {
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   placeholder="Search..."
-                  className="w-full bg-transparent text-[#F5EFE6] placeholder-[#F5EFE6]/50 text-sm outline-none font-['Inter']"
+                  className="w-full bg-transparent text-black placeholder-black text-sm outline-none font-['Inter']"
                 />
               </div>
             </form>
@@ -164,7 +164,7 @@ const Navbar = () => {
 
         {/* Mobile Menu Dropdown */}
         <div
-          className={`md:hidden transition-all duration-300 ease-in-out ${isopen ? "max-h-screen opacity-100" : "max-h-0 opacity-0 invisible"
+          className={`lg:hidden transition-all duration-300 ease-in-out ${isopen ? "max-h-screen opacity-100" : "max-h-0 opacity-0 invisible"
             } overflow-hidden bg-[#2A1D16] border-t border-[#C9A876]/20 shadow-xl`}
         >
           <ul className="flex flex-col py-3 px-4 space-y-1">

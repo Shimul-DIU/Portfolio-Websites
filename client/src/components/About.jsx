@@ -7,6 +7,7 @@ const About = () => {
   const sectionRef = useRef(null);
 
   useEffect(() => {
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -25,10 +26,10 @@ const About = () => {
     <section
       id="about"
       ref={sectionRef}
-      className="max-w-7xl  mx-auto min-h-fit bg-[#140D0A] flex items-center py-2 px-3 sm:px-6 lg:px-8 overflow-hidden"
+      className="max-w-7xl  mx-auto min-h-fit bg-[#0F1117]  flex items-center py-2 px-3 sm:px-6 lg:px-8 overflow-hidden"
     >
       <div
-        className={`max-w-5xl mx-auto w-full bg-[#29231E] p-3 sm:p-5 rounded-2xl transition-all duration-1000 ease-out delay-200 flex flex-col md:flex-row gap-4 md:gap-6 items-stretch ${isVisible
+        className={`max-w-5xl mx-auto w-full border  border-[#262936] bg-[#171923] p-3 sm:p-5 rounded-2xl transition-all duration-1000 ease-out delay-200 flex flex-col md:flex-row gap-4 md:gap-6 items-stretch ${isVisible
           ? "opacity-100 translate-x-0"
           : "opacity-0 translate-x-10 lg:translate-x-16"
           }`}
@@ -36,7 +37,7 @@ const About = () => {
         {/* Left side image - hidden on small devices, visible from md up. Stretches to match right side height */}
         <div className="hidden md:block md:w-2/5 flex-shrink-0">
           <img
-            src="../../public/images/Shimul.png"
+            src="./images/Shimul.png"
             alt="Md. Shimul"
             className="w-full h-full object-cover rounded-xl"
           />
@@ -57,7 +58,7 @@ const About = () => {
           </div>
 
           {/* Bio Description */}
-          <p className="text-[#F5EFE6]/70 leading-relaxed mb-2 sm:mb-5 font-['Inter'] text-xs sm:text-base">
+          <p className="text-[#F5EFE6]/70 leading-relaxed mb-2 sm:mb-5 font-['Inter'] text-sm md:text-base">
             Building fast, clean full stack applications with React, Node.js
             and MongoDB. Available for entry-level developer roles worldwide.
             Passionate about creating seamless digital experiences that solve

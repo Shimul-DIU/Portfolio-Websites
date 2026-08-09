@@ -28,7 +28,7 @@ const AboutPage = () => {
       className="max-w-7xl mx-auto min-h-fit bg-[#140D0A] flex items-center py-2 px-3 sm:px-6 lg:px-8 overflow-hidden"
     >
       <div
-        className={`max-w-5xl mx-auto w-full bg-[#29231E] p-3 sm:p-5 rounded-2xl transition-all duration-1000 ease-out delay-200 flex flex-col md:flex-row gap-4 md:gap-6 items-stretch ${isVisible
+        className={`max-w-5xl mx-auto w-full bg-[#1C1410] p-3 sm:p-5 rounded-2xl transition-all duration-1000 ease-out delay-200 flex flex-col md:flex-row gap-4 md:gap-6 items-stretch ${isVisible
           ? "opacity-100 translate-x-0"
           : "opacity-0 translate-x-10 lg:translate-x-16"
           }`}
