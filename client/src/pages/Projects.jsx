@@ -28,15 +28,16 @@ const projects = [
     featured: true,
   },
   {
-    title: "Project Two",
+    title: "Khwaja Mozammel Hoque (R) Foundation",
     description:
-      "A short description of what this project does and the problem it solves.",
-    image: "/images/project2.png",
-    tech: ["Next Js", "Firebase", "Material UI"],
-    liveLink: "https://your-live-link.com",
-    githubLink: "https://github.com/yourusername/project-two",
+      "A full-stack foundation website designed to showcase social activities, initiatives, and donation programs while providing users with an accessible platform to learn about and engage with the foundation.",
+    image: "https://res.cloudinary.com/jfz1pb3v/image/upload/v1788524364/Screenshot_2026-09-04_181338.png",
+    tech: ["Next.js","TypeScript",'Postgresql',"Firebase"],
+    liveLink: "https://foundation-a7d60.web.app/",
+    githubLink: "https://github.com/Shimul-DIU/Khwaja-Mozammel-Hoque-Foundation",
     featured: false,
   },
+
   {
     title: "Project Three",
     description:
@@ -50,8 +51,19 @@ const projects = [
 ];
 
 const Projects = () => {
+  const [width,setWidth]=useState(window.innerWidth);
+  const handleResize=()=>{
+    setWidth(window.innerWidth)
+  }
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef(null);
+
+  useEffect(() => {
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -168,22 +180,23 @@ const Projects = () => {
                 </div>
 
                 {/* Links */}
-                <div className="flex gap-3">
+
+                <div className="flex gap-1 sm:gap-3">
                   <a
                     href={project.liveLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-sm font-medium bg-[#C9A876] text-[#140D0A] px-5 py-2.5 rounded-full hover:bg-[#E8D9BE] transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-[#C9A876]/20"
+                    className="flex items-center gap-2 text-sm font-medium bg-[#C9A876] text-[#140D0A] px-3 py-2 rounded-full hover:bg-[#E8D9BE] transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-[#C9A876]/20"
                   >
                     <FontAwesomeIcon icon={faExternalLinkAlt} className="text-xs" />
-                    Live Demo
+                    {width < 370 ? "Live" : "Live Demo"}
                   </a>
 
                   <a
                     href={project.githubLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-sm font-medium border border-[#C9A876]/30 text-[#F5EFE6] px-5 py-2.5 rounded-full hover:bg-[#2A1D16] hover:border-[#C9A876] hover:scale-105 transition-all duration-300"
+                    className="flex items-center gap-2 text-sm font-medium border border-[#C9A876]/30 text-[#F5EFE6] px-3 py-2 rounded-full hover:bg-[#2A1D16] hover:border-[#C9A876] hover:scale-105 transition-all duration-300"
                   >
                     <FontAwesomeIcon icon={faGithub} className="text-sm" />
                     Code

@@ -86,7 +86,7 @@ const Banner = () => {
             {/* Mobile Profile Image Position */}
             <div className="sm:hidden absolute left-1/2 -translate-x-1/2 -bottom-14 z-30 w-28 h-28 rounded-full overflow-hidden shadow-2xl ring-2 ring-[#979ec4] bg-[#0F1117]">
               <img
-                src="/images/profile.png"
+                src="/images/ProfileImg.png"
                 alt="Md. Shimul Profile"
                 className="w-full h-full object-contain"
               />
@@ -98,7 +98,7 @@ const Banner = () => {
               <div className="flex flex-col items-center justify-center sm:flex-row sm:items-center gap-0 sm:gap-4 text-center sm:text-left z-20">
                 <div className="hidden sm:block sm:w-36 sm:h-36 lg:w-[152px] lg:h-[152px] rounded-full overflow-hidden bg-[#0F1117] shadow-2xl shrink-0 ring-2 ring-[#C9A876]">
                   <img
-                    src="https://res.cloudinary.com/t5icq7cq/image/upload/v1784465212/Shimul_envfhk.png"
+                    src="/images/ProfileImg.png"
                     alt="Md. Shimul Profile"
                     className="w-full h-full object-contain"
                   />
